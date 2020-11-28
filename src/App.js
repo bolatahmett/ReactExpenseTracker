@@ -1,24 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import { Header } from './Component/Header';
+import { Form } from './Component/Form';
+import { List } from './Component/List';
+import { ExpenseContextProvider } from './GlobalState';
+import { Container } from "reactstrap";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ExpenseContextProvider>
+      <Container className={"text-center"}>
+        <Header></Header>
+        <Form></Form>
+        <List></List>
+      </Container>
+    </ExpenseContextProvider>
   );
 }
 
